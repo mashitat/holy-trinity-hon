@@ -1,0 +1,23 @@
+@charset "utf-8";
+/*
+Theme Name: Seisanichi WordPress Theme
+Theme URI: https://holy-trinity.jp/
+Author: Entermina
+Author URI: https://holy-trinity.jp/
+Description: 聖三一幼稚園のテンプレートです。
+Version: 1.0
+*/
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+}
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+}

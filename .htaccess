@@ -1,0 +1,172 @@
+
+# BEGIN All In One WP Security
+#AIOWPS_CUSTOM_RULES_START
+# HTTPS対応
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
+
+#重要ファイルへのアクセス制限
+<FilesMatch "^(wp-config\.php|wp-mail\.php|install\.php|wlwmanifest\.xml|\.user\.ini)">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+#htaccessへのアクセス制限
+<FilesMatch "^\.(htaccess|htpasswd)$">
+deny from all
+</FilesMatch>
+
+#オーサー情報の出力制御
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^author/(.*) - [R=404,L]
+RewriteCond %{QUERY_STRING} author=(.*)
+RewriteRule ^$ - [R=404,L]
+</IfModule>
+
+#UploadフォルダでのPHPプログラムの実行を禁止
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^.*wp-content/uploads/.*\.php.*$ - [F,L]
+</IfModule>
+
+#wp-includeフォルダのPHPプログラムの直接アクセスを禁止
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^.*wp-admin/includes/ - [F,L]
+RewriteRule !^.*wp-includes/ - [S=3]
+RewriteRule ^.*wp-includes/[^/]+\.php$ - [F,L]
+RewriteRule ^.*wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteRule ^.*wp-includes/theme-compat/ - [F,L]
+</IfModule>
+
+# Security Headers
+<ifModule mod_headers.c>
+Header always set Content-Security-Policy "upgrade-insecure-requests"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy: "no-referrer-when-downgrade"
+Header always set Expect-CT "max-age=7776000, enforce"
+Header always append X-Frame-Options SAMEORIGIN
+Header always set Permissions-Policy "geolocation=(); midi=();notifications=();push=();sync-xhr=();accelerometer=(); gyroscope=(); magnetometer=(); payment=(); camera=(); microphone=();usb=(); xr=();speaker=(self);vibrate=();fullscreen=(self);"
+Header always set Strict-Transport-Security: "max-age=31536000" env=HTTPS
+Header always set X-Download-Options: noopen
+Header always set X-Powered-By: ""
+</ifModule>
+
+#AIOWPS_CUSTOM_RULES_END
+#AIOWPS_BLOCK_WP_FILE_ACCESS_START
+<Files license.txt>
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+</Files>
+<Files wp-config-sample.php>
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+</Files>
+<Files readme.html>
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+</Files>
+#AIOWPS_BLOCK_WP_FILE_ACCESS_END
+#AIOWPS_BASIC_HTACCESS_RULES_START
+<Files .htaccess>
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+</Files>
+ServerSignature Off
+LimitRequestBody 104857600
+<Files wp-config.php>
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+</Files>
+#AIOWPS_BASIC_HTACCESS_RULES_END
+#AIOWPS_DEBUG_LOG_BLOCK_HTACCESS_RULES_START
+<Files debug.log>
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+</Files>
+#AIOWPS_DEBUG_LOG_BLOCK_HTACCESS_RULES_END
+#AIOWPS_DISABLE_INDEX_VIEWS_START
+Options -Indexes
+#AIOWPS_DISABLE_INDEX_VIEWS_END
+#AIOWPS_DISABLE_TRACE_TRACK_START
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+</IfModule>
+#AIOWPS_DISABLE_TRACE_TRACK_END
+# END All In One WP Security
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+AddOutputFilter INCLUDES .html
+
+# BEGIN WordPress
+# "BEGIN WordPress" から "END WordPress" までのディレクティブ (行) は
+# 動的に生成され、WordPress フィルターによってのみ修正が可能です。
+# これらのマーカー間にあるディレクティブへのいかなる変更も上書きされてしまいます。
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+# BEGIN LiteSpeed
+# "BEGIN LiteSpeed" から "END LiteSpeed" までのディレクティブ (行) は
+# 動的に生成され、WordPress フィルターによってのみ修正が可能です。
+# これらのマーカー間にあるディレクティブへのいかなる変更も上書きされてしまいます。
+<IfModule Litespeed>
+SetEnv noabort 1
+</IfModule>
+# END LiteSpeed
+
+# Begin AIOWPSEC Firewall
+<IfModule LiteSpeed>
+php_value auto_prepend_file '/home/users/2/pupu.jp-gray-takeo-6125/web/holy-trinity/aios-bootstrap.php'
+</IfModule>
+<IfModule lsapi_module>
+php_value auto_prepend_file '/home/users/2/pupu.jp-gray-takeo-6125/web/holy-trinity/aios-bootstrap.php'
+</IfModule>
+# End AIOWPSEC Firewall

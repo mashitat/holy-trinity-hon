@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width: 949px) {
+/*-------------------------------------------------------------------------------------------------
+  header
+---------------------------------------------------------------------------------------------------*/
+
+header {
+    width:100%;
+}
+header h1 {
+    padding-left: 1em;
+}
+
+nav {
+    width:100%;
+}
+nav .nav-home img {
+    width: 100px;
+    height: auto;
+}
+nav .global-nav li.nav-A:hover {
+    background: url("../../images/gnav_01@2x.png") no-repeat center bottom;
+    background-size: 110px 15px;
+}
+nav .global-nav li.nav-B:hover {
+    background: url("../../images/gnav_02@2x.png") no-repeat center bottom;
+    background-size: 110px 15px;
+}
+nav .global-nav li.nav-C:hover {
+    background: url("../../images/gnav_03@2x.png") no-repeat center bottom;
+    background-size: 110px 15px;
+}
+nav .global-nav li.nav-D:hover {
+    background: url("../../images/gnav_04@2x.png") no-repeat center bottom;
+    background-size: 110px 15px;
+}
+nav .global-nav li.nav-E:hover {
+    background: url("../../images/gnav_05@2x.png") no-repeat center bottom;
+    background-size: 110px 15px;
+}
+nav .global-nav li.nav-F:hover {
+    background: url("../../images/gnav_06@2x.png") no-repeat center bottom;
+    background-size: 110px 15px;
+}
+
+/*-------------------------------------------------------------------------------------------------
+  footer
+---------------------------------------------------------------------------------------------------*/
+footer .ft-cnts {
+    width: 95%;
+}
+footer .ft-btn li img {
+    width: 100%;
+    max-width: 246px;
+    height: auto;
+}
+footer .to-top_area {
+    width: 100%;
+}
+#btn-to-top {
+    margin-right: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------
+  
+---------------------------------------------------------------------------------------------------*/
+.m-cnts-01 {
+    width: 100%;
+}
+.m-cnts-02 {
+    width: 95%;
+}
+.m-cnts-03 {
+    width: 90%;
+}
+
+.m-cnts-01 .img-lo-01 {
+    width: 95%;
+    margin: auto;
+}
+.img-list.w01 .img-lo-03 {
+    width: 49%;
+}
+.img-list.events .img-lo-04 {
+    width: 48%;
+    max-width: 347px;
+}
+.img-list.events .img-lo-04 img,
+.img-list.w01 .img-lo-03 img {
+    width: 100%;
+    height: auto;
+}
+
+.img-lo-04.angel::before {
+    top:-11px;
+    left:-4%;
+}
+.img-lo-04.angelbaby::before {
+    top:-11px;
+    left:-4%;
+}
+
+/*-------------------------------------------------------------------------------------------------
+  nursery
+---------------------------------------------------------------------------------------------------*/
+
+.lead-img01 {
+    background: url("../../images/class_2yo_cnts_bg@2x.png") no-repeat center 80px;
+    background-size:1000px auto;
+    min-height: 620px;
+    margin-bottom: 80px;
+}
+.nursery-ft-menu ul li {
+    width: 33%;
+}
+.nursery-ft-menu ul li img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+.one-day .schedule h4 {
+    position: relative;
+    z-index: 5;
+}
+.bus_01 .lead02 {
+    padding-left: 270px;
+}
+.bus_01 .lead03 {
+    padding-left: 270px;
+}
+/*-------------------------------------------------------------------------------------------------
+  top
+---------------------------------------------------------------------------------------------------*/
+
+.top-about h2 {
+    left: -4%;
+}
+.top-environments .int-01 h2 {
+    left:-4%;
+    top:-115px;
+}
+.top-environments .int-02 h2 {
+    right:-4%;
+    top:-115px;
+}
+.top-insta .sentence {
+    width: 50%;
+}
+
+
+/*--------------------------------------------------------------------------------------------------*/
+}
