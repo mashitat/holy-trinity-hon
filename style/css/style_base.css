@@ -65,6 +65,7 @@ body.top-index.daytime {
     background-attachment: scroll;
     background-size:auto;
 }
+/* 修正ID008イラスト差し替え予定 */
 body.top-index.night {
     background-image: url("../../images/top_mainvisual_night.png");
     background-repeat: no-repeat;

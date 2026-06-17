@@ -50,6 +50,7 @@ body.access::before , body.privacy::before, body.sitemap::before {
 body.top-index::before {
     background: none;
 }
+/* 修正ID008イラスト差し替え予定 */
 body.top-index.daytime {
     background: url("../../images/top_mainvisual_daytime_sp@2x.png") no-repeat center top;
     background-size: 100% auto;
