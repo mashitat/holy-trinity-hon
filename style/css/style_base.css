@@ -57,6 +57,7 @@ body.top-index {
     background-attachment: scroll;
     background-size:1920px 1115px;
 }
+/* 修正ID008イラスト差し替え予定 */
 body.top-index.daytime {
     background-image: url("../../images/top_mainvisual_daytime.jpg");
     background-repeat: no-repeat;
@@ -152,6 +153,7 @@ nav .global-nav li, nav .global-nav li a {
     font-size: 1.125rem;
     font-weight: bold;
     align-self: center;
+    white-space: nowrap;
 }
 
 nav .global-nav li a:hover{
