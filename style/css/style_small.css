@@ -999,10 +999,10 @@ p.fs-05-c {
     padding-top: 65px;
 }
 .top-environments {
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
 }
 .top-environments .int-01 {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 .top-environments .int-01 h2 {
     left:-4%;

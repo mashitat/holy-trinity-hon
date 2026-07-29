@@ -1718,14 +1718,14 @@ overflow: hidden;
     margin-bottom: 40px;
 }
 .top-environments {
-    margin-bottom: 150px;
+    /*margin-bottom: 150px;*/
     clear: both;
 }
 .top-environments .int-01, .top-environments .int-02 {
     position: relative;
 }
 .top-environments .int-01 {
-    margin-bottom: 150px;
+    margin-bottom: 40px;
 }
 .top-environments .int-01 h2 {
     position: absolute;
