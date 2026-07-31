@@ -59,7 +59,7 @@ body.top-index {
 }
 /* 修正ID008イラスト差し替え予定 */
 body.top-index.daytime {
-    background-image: url("../../images/top_mainvisual_daytime.jpg");
+    background-image: url("../../images/top_mainvisual_daytime.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: scroll;
