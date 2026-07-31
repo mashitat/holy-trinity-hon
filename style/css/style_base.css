@@ -649,7 +649,7 @@ p+p {
 
 .list-btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .list-btn li a {
     width: 188px;
