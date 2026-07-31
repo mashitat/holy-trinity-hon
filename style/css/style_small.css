@@ -50,6 +50,7 @@ body.access::before , body.privacy::before, body.sitemap::before {
 body.top-index::before {
     background: none;
 }
+/* 修正ID008イラスト差し替え予定 */
 body.top-index.daytime {
     background: url("../../images/top_mainvisual_daytime_sp@2x.png") no-repeat center top;
     background-size: 100% auto;
@@ -472,6 +473,10 @@ p.fs-05-c {
 .floor-map img {
     width: 100%;
     height: auto;
+}
+.img-lo-01 .img.eceq img{
+    width: 100%;
+    height: 240px;
 }
 .img-c img {
     width: 45%;
@@ -998,10 +1003,10 @@ p.fs-05-c {
     padding-top: 65px;
 }
 .top-environments {
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
 }
 .top-environments .int-01 {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 .top-environments .int-01 h2 {
     left:-4%;
