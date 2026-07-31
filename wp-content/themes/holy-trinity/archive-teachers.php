@@ -46,7 +46,7 @@
 </div>
 </section>
 <section class="img-lo-02">
-<div class="img"><img src="../images/archive-teacher_img002.gif" width="187" height="187" alt="児童虐待防止法 イメージ画像"/></div>
+<div class="img"><img src="../images/archive-teacher_img002.png" width="187" height="187" alt="児童虐待防止法 イメージ画像"/></div>
 <div class="sentence">
 <h3 class="ttl-s03">児童虐待防止法</h3>
 <p class="fs-00">「児童虐待防止法」に基づき、 子どもの最善の利益を守ることを第一に、職員全員が虐待防止に関する研修を受けています。 子どもの変化に気づく視点を大切にし、早期発見・早期対応を心がけながら、 園全体で子どもの安全と権利を守る取り組みを続けています。</p>
