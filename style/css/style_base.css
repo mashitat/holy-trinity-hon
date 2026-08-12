@@ -394,6 +394,13 @@ address {
     width: 610px;
     margin: auto;
 }
+.m-cnts-org picture,.m-cnts-org picture img {
+    display: block;
+    width: 90%;
+    max-width: 850px;
+    height: auto;
+    margin: 0 auto;
+}
 h2.ttl-col-A, h2.ttl-col-B, h2.ttl-col-C, h2.ttl-col-D, h2.ttl-col-E {
     font-size: 1.75em;
     text-align: center;
